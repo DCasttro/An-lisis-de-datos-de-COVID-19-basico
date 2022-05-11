@@ -127,10 +127,13 @@ plot(
 )
 # Casos activos
 lines(covid$FECHA, covid$activos, col="red")
+
 # Casos recuperados
 lines(covid$FECHA, covid$RECUPERADOS, col="green")
+
 # Casos fallecidos
-lines(covid$FECHA, covid$fallecidos, col="black")
+lines
+
 # Leyenda
 legend(
   x = "topleft",
@@ -139,12 +142,14 @@ legend(
   col = c("blue", "red", "green", "black"),
   lty = 1,
   cex = 0.7)
+
 # Formato del eje X
 axis(side = 1,
      covid$FECHA,
      tick = FALSE,
      format(covid$FECHA, "%m-%y"),
      cex.axis = .7)
+
 # Formato del eje Y
 axis(
   side = 2,
@@ -176,8 +181,10 @@ barplot(
   col = "blue"
 )
 # Fechas minima y máxima
+
 x_min <- min(covid$FECHA)
 x_max <- max(covid$FECHA)
+
 # Formato del eje X
 axis(
   side = 1,
@@ -202,9 +209,11 @@ barplot(
   ylab = "Casos fallecidos",
   col = "black"
 )
+
 # Fechas minima y máxima
 x_min <- min(covid$FECHA)
 x_max <- max(covid$FECHA)
+
 # Formato del eje X
 axis(
   side = 1,
