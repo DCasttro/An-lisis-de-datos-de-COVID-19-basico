@@ -156,6 +156,65 @@ axis(
 ```
 
 
+#### Casos diarios
+
+##### Positivos
+
+```{r positivos-diarios}
+# Gráfico de barras
+barplot(
+  height=covid$nue_posi,
+  names.arg=format(covid$FECHA, "%Y"),
+  ann = FALSE, 
+  bty = "n", 
+  tck = 0, 
+  xaxt = "n",
+  space = 1,
+  main="Casos positivos por día",
+  xlab = "Fecha",
+  ylab = "Casos positivos",
+  col = "blue"
+)
+# Fechas minima y máxima
+x_min <- min(covid$FECHA)
+x_max <- max(covid$FECHA)
+# Formato del eje X
+axis(
+  side = 1,
+  at = match(seq(as.Date(x_min), x_max, "years"), covid$FECHA) * (1 + 1),
+  labels = format(seq(as.Date(x_min), x_max, "years"), "%Y"),
+  lwd = 0)
+```
+##### Fallecidos
+
+```{r fallecidos-diarios}
+# Gráfico de barras
+barplot(
+  height=covid$nue_falleci,
+  names.arg=format(covid$FECHA, "%Y"),
+  ann = FALSE, 
+  bty = "n", 
+  tck = 0, 
+  xaxt = "n",
+  space = 1,
+  main="Casos fallecidos por día",
+  xlab = "Fecha",
+  ylab = "Casos fallecidos",
+  col = "black"
+)
+# Fechas minima y máxima
+x_min <- min(covid$FECHA)
+x_max <- max(covid$FECHA)
+# Formato del eje X
+axis(
+  side = 1,
+  at = match(seq(as.Date(x_min), x_max, "years"), covid$FECHA) * (1 + 1),
+  labels = format(seq(as.Date(x_min), x_max, "years"), "%Y"),
+  lwd = 0)
+```
 
 
-
+## Ejercicios
+1. Genere un gráfico de barras que muestre para cada día la cantidad de casos hospitalizados (de cualquier tipo).
+2. Genere un gráfico de líneas que muestre para cada día la cantidad de casos hospitalizados en salón y la cantidad de casos hospitalizados en unidad de cuidados intensivos (UCI).
+3. Genere un gráfico de líneas que muestre para cada día la cantidad acumulada de casos activos de menores, adultos y adultos mayores.
