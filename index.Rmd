@@ -1,0 +1,15 @@
+---
+title: Análisis de datos de COVID-19 en Costa Rica mediante funciones del paquete
+  base R - Basico
+author: "Daniela Castro"
+date: '2022-05-11'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Presentacion 
+Este documento presenta graficos generador a partir de los datos Covid-19 en Costa Rica compartidos por el Ministerio de Salud en https://geovision.uned.ac.cr/oges/
+
